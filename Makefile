@@ -1,4 +1,12 @@
-push:
-	@git add *
-	@git commit -m "inception1"
-	@git push
+build:
+		docker-compose -f  srcs/docker-compose.yml build
+
+up:
+		docker-compose  -f srcs/docker-compose.yml up
+
+
+
+down:
+		docker-compose -f srcs/docker-compose.yml down -v
+
+re: down build up
